@@ -1,52 +1,57 @@
-import stylex from "@stylexjs/stylex";
-import { FontProviderKey, fontProvider } from "./constants";
+import {
+  FontSizeKey,
+  FontVariantKey,
+  fontSize,
+  fontVariant,
+} from "./constants";
 import { ColorKey, colors } from "../colors";
 import { ReactNode } from "react";
 
 type Props = {
-  variant: FontProviderKey;
+  variant: FontVariantKey;
   color: ColorKey;
   children: ReactNode;
+  size: FontSizeKey;
 };
 
-export const P = ({ variant, color, children }: Props) => {
+export const P = ({ variant, color, children, size }: Props) => {
   return (
     <p
-      {...stylex.props(colors[color])}
-      className={fontProvider[variant].className}
+      style={{ color: colors[color], ...fontSize[size] }}
+      className={fontVariant[variant].className}
     >
       {children}
     </p>
   );
 };
 
-export const H1 = ({ variant, color, children }: Props) => {
+export const H1 = ({ variant, color, children, size }: Props) => {
   return (
     <h1
-      {...stylex.props(colors[color])}
-      className={fontProvider[variant].className}
+      style={{ color: colors[color], ...fontSize[size] }}
+      className={fontVariant[variant].className}
     >
       {children}
     </h1>
   );
 };
 
-export const H2 = ({ variant, color, children }: Props) => {
+export const H2 = ({ variant, color, children, size }: Props) => {
   return (
     <h2
-      {...stylex.props(colors[color])}
-      className={fontProvider[variant].className}
+      style={{ color: colors[color], ...fontSize[size] }}
+      className={fontVariant[variant].className}
     >
       {children}
     </h2>
   );
 };
 
-export const H3 = ({ variant, color, children }: Props) => {
+export const H3 = ({ variant, color, children, size }: Props) => {
   return (
     <h3
-      {...stylex.props(colors[color])}
-      className={fontProvider[variant].className}
+      style={{ color: colors[color], ...fontSize[size] }}
+      className={fontVariant[variant].className}
     >
       {children}
     </h3>

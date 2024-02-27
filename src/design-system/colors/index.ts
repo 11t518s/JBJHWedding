@@ -1,20 +1,18 @@
-import stylex from "@stylexjs/stylex";
+export const colors = {
+  darkOrange: "#FD2E00",
 
-export const colors = stylex.create({
-  darkOrange: { color: "#FD2E00" },
+  subGreen: "#27AE60",
+  subBlue: "#2F80ED",
+  subBrown: "#B6500B",
+  subPurple: "#8936E0",
+  subKkyBlue: "#73B6E4",
+  subMint: "#8CC4A5",
 
-  subGreen: { color: "#27AE60" },
-  subBlue: { color: "#2F80ED" },
-  subBrown: { color: "#B6500B" },
-  subPurple: { color: "#8936E0" },
-  subKkyBlue: { color: "#73B6E4" },
-  subMint: { color: "#8CC4A5" },
-
-  black: { color: "#000000" },
-  dark: { color: "#333333" },
-  medium: { color: "#828282" },
-  light: { color: "#E0E0E0" },
-  white: { color: "#ffffff" },
-});
+  black: "#000000",
+  dark: "#333333",
+  medium: "#828282",
+  light: "#E0E0E0",
+  white: "#ffffff",
+};
 
 export type ColorKey = keyof typeof colors;
