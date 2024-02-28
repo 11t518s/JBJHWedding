@@ -1,16 +1,28 @@
+"use client";
+
+import { ColorKey, colors } from "@/design-system/colors";
+import {
+  FontSizeKey,
+  FontVariantKey,
+  fontSize,
+  fontVariant,
+} from "@/design-system/fonts/constants";
 import { Variant, motion, useAnimation, useInView } from "framer-motion";
 import { useEffect, useRef } from "react";
 
 type AnimatedTextProps = {
   text: string | string[];
   el?: keyof JSX.IntrinsicElements;
-  className?: string;
   once?: boolean;
   repeatDelay?: number;
   animation?: {
     hidden: Variant;
     visible: Variant;
   };
+
+  variant: FontVariantKey;
+  color: ColorKey;
+  size: FontSizeKey;
 };
 
 const defaultAnimations = {
@@ -30,10 +42,12 @@ const defaultAnimations = {
 export const ShowWeddingText = ({
   text,
   el: Wrapper = "p",
-  className,
   once,
   repeatDelay,
   animation = defaultAnimations,
+  variant,
+  color,
+  size,
 }: AnimatedTextProps) => {
   const controls = useAnimation();
   const textArray = Array.isArray(text) ? text : [text];
@@ -62,37 +76,42 @@ export const ShowWeddingText = ({
   }, [isInView]);
 
   return (
-    <Wrapper className={className}>
-      <span className="sr-only">{textArray.join(" ")}</span>
-      <motion.span
-        ref={ref}
-        initial="hidden"
-        animate={controls}
-        variants={{
-          visible: { transition: { staggerChildren: 0.1 } },
-          hidden: {},
-        }}
-        aria-hidden
-      >
-        {textArray.map((line, lineIndex) => (
-          <span className="block" key={`${line}-${lineIndex}`}>
-            {line.split(" ").map((word, wordIndex) => (
-              <span className="inline-block" key={`${word}-${wordIndex}`}>
-                {word.split("").map((char, charIndex) => (
-                  <motion.span
-                    key={`${char}-${charIndex}`}
-                    className="inline-block"
-                    variants={animation}
-                  >
-                    {char}
-                  </motion.span>
-                ))}
-                <span className="inline-block">&nbsp;</span>
-              </span>
-            ))}
-          </span>
-        ))}
-      </motion.span>
+    <Wrapper
+      style={{ color: colors[color], ...fontSize[size] }}
+      className={fontVariant[variant].className}
+    >
+      <p>
+        <span className="sr-only" />
+        <motion.span
+          ref={ref}
+          initial="hidden"
+          animate={controls}
+          variants={{
+            visible: { transition: { staggerChildren: 0.1 } },
+            hidden: {},
+          }}
+          aria-hidden
+        >
+          {textArray.map((line, lineIndex) => (
+            <span className="block" key={`${line}-${lineIndex}`}>
+              {line.split(" ").map((word, wordIndex) => (
+                <span className="inline-block" key={`${word}-${wordIndex}`}>
+                  {word.split("").map((char, charIndex) => (
+                    <motion.span
+                      key={`${char}-${charIndex}`}
+                      className="inline-block"
+                      variants={animation}
+                    >
+                      {char}
+                    </motion.span>
+                  ))}
+                  <span className="inline-block">&nbsp;</span>
+                </span>
+              ))}
+            </span>
+          ))}
+        </motion.span>
+      </p>
     </Wrapper>
   );
 };
