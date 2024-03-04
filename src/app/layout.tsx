@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import styles from "@/styles/global.module.css";
 
 export const metadata: Metadata = {
   title: "",
@@ -11,7 +12,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ko">
+    <html lang="ko" className={styles.screenContainer}>
       <body>{children}</body>
     </html>
   );

@@ -1,0 +1,20 @@
+.countDownIntroTextContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+
+.countDownContainer {
+  display: flex;
+  justify-content: center;
+
+  align-items: flex-start;
+}
+
+.countDown {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}

@@ -1,12 +1,28 @@
-import { ShowWeddingText } from "@/animations";
+import { Section } from "@/animations/Section";
 import { Intro } from "@/components";
-import { H3, H2, H1, P } from "@/design-system";
 import "reset-css";
+import { Invitation } from "@/components/Invitation";
+import { ComingSoon } from "@/components/ComingSoon";
+import { Gallery } from "@/components/Gallery";
 
 export default function Home() {
   return (
-    <>
-      <Intro />
-    </>
+    <div>
+      <Section>
+        <Intro />
+      </Section>
+
+      <Section>
+        <Invitation />
+      </Section>
+
+      <Section>
+        <ComingSoon />
+      </Section>
+
+      <Section>
+        <Gallery />
+      </Section>
+    </div>
   );
 }

@@ -1,0 +1,20 @@
+.brideAndGroom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dotContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+
+.dot {
+  height: 4px;
+  width: 4px;
+
+  background-color: #e0e0e0;
+  border-radius: 4px;
+}
