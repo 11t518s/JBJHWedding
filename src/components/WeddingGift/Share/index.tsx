@@ -12,34 +12,30 @@ declare global {
   }
 }
 
-const kakaoApiKey = "63224f109e789587a0d204e886f416c5";
-
 export const Share = () => {
   const urlShareRef = useRef<ToastHandler>(null);
 
   const handleShareKakao = () => {
     window.Kakao?.Share?.sendDefault({
-      sendDefault: {
-        objectType: "feed",
-        content: {
-          title: "💌 정빈 & 정화 결혼식에 초대합니다!",
-          description: "5월 18일 토요일 오후 5시 아펠가모 공덕 7층 라로브홀",
-          imageUrl: `/Invitation_WebOGimg.png`,
+      objectType: "feed",
+      content: {
+        title: "💌 정빈 & 정화 결혼식에 초대합니다!",
+        description: "5월 18일 토요일 오후 5시 아펠가모 공덕 7층 라로브홀",
+        imageUrl: `/Invitation_WebOGimg.png`,
+        link: {
+          mobileWebUrl: "https://jbjh-wedding.vercel.app/",
+          webUrl: "https://jbjh-wedding.vercel.app/",
+        },
+      },
+      buttons: [
+        {
+          title: "자세히 보기",
           link: {
             mobileWebUrl: "https://jbjh-wedding.vercel.app/",
             webUrl: "https://jbjh-wedding.vercel.app/",
           },
         },
-        buttons: [
-          {
-            title: "자세히 보기",
-            link: {
-              mobileWebUrl: "https://jbjh-wedding.vercel.app/",
-              webUrl: "https://jbjh-wedding.vercel.app/",
-            },
-          },
-        ],
-      },
+      ],
     });
   };
 
@@ -48,7 +44,7 @@ export const Share = () => {
       const kakaoInit = setInterval(() => {
         if (!window?.Kakao) return;
         if (!window.Kakao.isInitialized()) {
-          window.Kakao.init(kakaoApiKey);
+          window.Kakao.init(process.env.NEXT_PUBLIC_KAKAO_KEY);
           clearInterval(kakaoInit);
         }
       }, 300);

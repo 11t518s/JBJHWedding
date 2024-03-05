@@ -1,4 +1,5 @@
 import { ShowWeddingText } from "@/animations";
+import Image from "next/image";
 
 export const Intro = () => {
   return (
@@ -8,17 +9,7 @@ export const Intro = () => {
         height: "100vh",
       }}
     >
-      <div
-        style={{
-          display: "flex",
-          position: "absolute",
-          justifyContent: "center",
-          alignItems: "center",
-          flexDirection: "column",
-        }}
-      >
-        <img src="/BG_img.png" />
-      </div>
+      <Image src="/Cover.png" alt="배경" fill priority quality={100} />
       <div
         style={{
           display: "flex",

@@ -1,11 +1,12 @@
 "use client";
 
 import { ShowWeddingText } from "@/animations";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import styles from "./gallery.module.css";
 import { Modal } from "./Modal";
 import { motion } from "framer-motion";
 import { images, thumbnailImages } from "@/constants";
+import Image from "next/image";
 
 export const Gallery = () => {
   const [imageIndex, setImageIndex] = useState<null | number>(null);
@@ -29,7 +30,7 @@ export const Gallery = () => {
           gap: 8,
         }}
       >
-        {[...thumbnailImages].map((item, index) => {
+        {thumbnailImages.map((item, index) => {
           return (
             <motion.div
               className={styles.box}
@@ -45,7 +46,7 @@ export const Gallery = () => {
                 borderRadius: 8,
               }}
             >
-              <img width={item ? 100 : 0} height={item ? 100 : 0} src={item} />
+              <Image width={100} height={100} src={item} alt="갤러리" />
             </motion.div>
           );
         })}
