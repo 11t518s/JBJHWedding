@@ -7,11 +7,12 @@ import { Gallery } from "@/components/Gallery";
 import { Location } from "@/components/Location";
 import { WeddingGift } from "@/components/WeddingGift";
 import styles from "@/styles/global.module.css";
+import { PreventPinchZoom } from "./PreventPinchZoom";
 
 export default function Home() {
   return (
     <>
-      <div className={styles.screenContainer}>
+      <div className={styles.screenContainer} id="screenContainer">
         <Section>
           <Intro />
         </Section>
@@ -31,10 +32,12 @@ export default function Home() {
         <Section>
           <Location />
         </Section>
-        {/* <Section></Section> */}
+        <Section isLast>
+          <WeddingGift />
+        </Section>
       </div>
 
-      <WeddingGift />
+      <PreventPinchZoom />
     </>
   );
 }

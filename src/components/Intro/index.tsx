@@ -6,7 +6,8 @@ export const Intro = () => {
     <div
       style={{
         position: "relative",
-        height: "100vh",
+        height: "100svh",
+        margin: "0 auto",
       }}
     >
       <Image
@@ -15,7 +16,9 @@ export const Intro = () => {
         fill
         priority
         quality={100}
-        objectFit="cover"
+        style={{
+          objectFit: "cover",
+        }}
       />
       <div
         style={{
@@ -24,6 +27,9 @@ export const Intro = () => {
           justifyContent: "center",
           alignItems: "center",
           flexDirection: "column",
+          paddingTop: "32px",
+          width: "100vw",
+          maxWidth: "720px",
         }}
       >
         <ShowWeddingText

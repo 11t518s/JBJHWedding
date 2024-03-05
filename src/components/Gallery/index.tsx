@@ -3,6 +3,7 @@
 import { ShowWeddingText } from "@/animations";
 import { useState } from "react";
 import styles from "./gallery.module.css";
+import globalStyles from "@/styles/global.module.css";
 import { Modal } from "./Modal";
 import { motion } from "framer-motion";
 import { images, thumbnailImages } from "@/constants";
@@ -12,7 +13,7 @@ export const Gallery = () => {
   const [imageIndex, setImageIndex] = useState<null | number>(null);
 
   return (
-    <>
+    <div className={globalStyles.contentContainer}>
       <ShowWeddingText
         text="Gallery"
         variant="black"
@@ -64,6 +65,6 @@ export const Gallery = () => {
       {images.map((item) => (
         <img width={0} height={0} src={item} key={item} />
       ))}
-    </>
+    </div>
   );
 };

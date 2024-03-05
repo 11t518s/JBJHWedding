@@ -5,8 +5,13 @@ import styles from "@/styles/global.module.css";
 
 type SectionProps = {
   children: ReactNode;
+  isLast?: boolean;
 };
 
-export const Section = ({ children }: SectionProps) => {
-  return <section className={styles.screen}>{children}</section>;
+export const Section = ({ children, isLast = false }: SectionProps) => {
+  return (
+    <section className={isLast ? styles.lastScreen : styles.screen}>
+      {children}
+    </section>
+  );
 };

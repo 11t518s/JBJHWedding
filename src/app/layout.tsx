@@ -22,15 +22,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko" className={styles.screenContainer}>
+      <head>
+        <Script
+          strategy="beforeInteractive"
+          src={`//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.NEXT_PUBLIC_KAKAO_KEY}&autoload=false`}
+        />
+        <Script
+          src="https://developers.kakao.com/sdk/js/kakao.js"
+          strategy="afterInteractive"
+        />
+      </head>
+
       <body>{children}</body>
-      <Script
-        strategy="beforeInteractive"
-        src={`//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.NEXT_PUBLIC_KAKAO_KEY}&autoload=false`}
-      />
-      <Script
-        src="https://developers.kakao.com/sdk/js/kakao.js"
-        strategy="afterInteractive"
-      />
     </html>
   );
 }

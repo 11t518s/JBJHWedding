@@ -1,4 +1,6 @@
-import { ReactNode } from "react";
+"use client";
+
+import { ReactNode, WheelEventHandler, useEffect } from "react";
 import { motion } from "framer-motion";
 import styles from "./modal.module.css";
 import Icons from "../icons";
@@ -14,6 +16,21 @@ export const GeneralModal = ({
   layoutId,
   onDismissClick,
 }: ModalProps) => {
+  useEffect(() => {
+    const container = document.getElementById("screenContainer");
+    const preventScroll = (e: WheelEvent) => {
+      e.preventDefault();
+      e.stopPropagation();
+
+      return false;
+    };
+
+    container?.addEventListener("wheel", preventScroll);
+    return () => {
+      container?.removeEventListener("wheel", preventScroll);
+    };
+  }, []);
+
   return (
     <motion.div
       onClick={onDismissClick}
