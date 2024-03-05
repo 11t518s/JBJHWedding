@@ -28,9 +28,9 @@ export default function Home() {
           <Gallery />
         </Section>
 
-        {/* <Section>
+        <Section>
           <Location />
-        </Section> */}
+        </Section>
         <Section>
           <WeddingGift />
         </Section>

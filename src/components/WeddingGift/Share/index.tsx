@@ -26,16 +26,16 @@ export const Share = () => {
           description: "5월 18일 토요일 오후 5시 아펠가모 공덕 7층 라로브홀",
           imageUrl: `/Invitation_WebOGimg.png`,
           link: {
-            mobileWebUrl: "www.naver.com",
-            webUrl: "www.naver.com",
+            mobileWebUrl: "https://jbjh-wedding.vercel.app/",
+            webUrl: "https://jbjh-wedding.vercel.app/",
           },
         },
         buttons: [
           {
             title: "자세히 보기",
             link: {
-              mobileWebUrl: "www.naver.com",
-              webUrl: "www.naver.com",
+              mobileWebUrl: "https://jbjh-wedding.vercel.app/",
+              webUrl: "https://jbjh-wedding.vercel.app/",
             },
           },
         ],
@@ -66,7 +66,7 @@ export const Share = () => {
           <Icons iconName="kakaotalk" />
         </div>
         <CopyToClipboard
-          text="www.naver.com"
+          text="https://jbjh-wedding.vercel.app"
           onCopy={urlShareRef.current?.showToast}
         >
           <Icons iconName="link" />
