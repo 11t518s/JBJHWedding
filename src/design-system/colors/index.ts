@@ -5,7 +5,7 @@ export const colors = {
   subBlue: "#2F80ED",
   subBrown: "#B6500B",
   subPurple: "#8936E0",
-  subKkyBlue: "#73B6E4",
+  subSkyBlue: "#73B6E4",
   subMint: "#8CC4A5",
 
   black: "#000000",

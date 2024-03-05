@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import styles from "@/styles/global.module.css";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "",
@@ -13,7 +14,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko" className={styles.screenContainer}>
-      <body>{children}</body>
+      <body>
+        <Script
+          strategy="beforeInteractive"
+          src={`//dapi.kakao.com/v2/maps/sdk.js?appkey=63224f109e789587a0d204e886f416c5&autoload=false`}
+        />
+        {children}
+      </body>
     </html>
   );
 }

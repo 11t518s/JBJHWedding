@@ -1,6 +1,8 @@
 import { images } from "@/constants";
+import { P } from "@/design-system";
 import { GeneralModal } from "@/design-system/Modals";
-import { SlideShow } from "@/design-system/SlideShow";
+import Icons from "@/design-system/icons";
+import { useInnerSize } from "@/hooks/useInnerSize";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
@@ -12,8 +14,10 @@ type ModalProps = {
 
 export const Modal = ({ index, layoutId, onDissmiss }: ModalProps) => {
   const [currentIndex, setCurrentIndex] = useState(index);
+  const [directionX, setDirectionX] = useState("0");
 
   const handlePrev = () => {
+    setDirectionX("-100%");
     setCurrentIndex((prev) => {
       if (prev === null) return 0;
       return prev === 0 ? images.length - 1 : prev - 1;
@@ -21,6 +25,7 @@ export const Modal = ({ index, layoutId, onDissmiss }: ModalProps) => {
   };
 
   const handleNext = () => {
+    setDirectionX("100%");
     setCurrentIndex((prev) => {
       if (prev === null) return 0;
       return prev === images.length - 1 ? 0 : prev + 1;
@@ -33,38 +38,55 @@ export const Modal = ({ index, layoutId, onDissmiss }: ModalProps) => {
 
   return (
     <GeneralModal layoutId={layoutId} onDismissClick={onDissmiss}>
-      <AnimatePresence initial={false} custom={currentIndex}>
-        <motion.img
-          key={currentIndex}
-          src={images[currentIndex]}
-          // initial={{ opacity: 0, x: "100%" }}
-          // exit={{ opacity: 0, x: "-100%" }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5 }}
-          style={{ maxWidth: "100%", position: "absolute" }}
-          drag="x"
-          // dragConstraints={{ left: 0, right: 0 }}
-          dragElastic={0.7}
-          onDragEnd={(event, info) => {
-            if (info.offset.x > 50) {
-              handlePrev();
-            } else if (info.offset.x < -50) {
-              handleNext();
-            }
+      <AnimatePresence initial={true}>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
           }}
-        />
-      </AnimatePresence>
+        >
+          <motion.img
+            key={currentIndex}
+            src={images[currentIndex]}
+            initial={{
+              opacity: 0,
+              x: directionX,
+            }}
+            width="100%"
+            height="100%"
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.3 }}
+            drag="x"
+            dragElastic={0.7}
+            onDragEnd={(_, info) => {
+              if (info.offset.x > 1) {
+                handlePrev();
+              } else if (info.offset.x < -1) {
+                handleNext();
+              }
+            }}
+          />
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignContent: "center",
+              padding: "10px",
+            }}
+          >
+            <div onClick={handlePrev}>
+              <Icons iconName="chevronLeft" />
+            </div>
+            <P variant="medium" color="white" size={16}>
+              {currentIndex + 1}/{images.length}
+            </P>
 
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          padding: "10px",
-        }}
-      >
-        <button onClick={handlePrev}>이전</button>
-        <button onClick={handleNext}>다음</button>
-      </div>
+            <div onClick={handleNext}>
+              <Icons iconName="chevronRight" />
+            </div>
+          </div>
+        </div>
+      </AnimatePresence>
     </GeneralModal>
   );
 };

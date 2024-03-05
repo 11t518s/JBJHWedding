@@ -23,6 +23,7 @@ type AnimatedTextProps = {
   variant: FontVariantKey;
   color: ColorKey;
   size: FontSizeKey;
+  speed?: number;
 };
 
 const defaultAnimations = {
@@ -48,6 +49,7 @@ export const ShowWeddingText = ({
   variant,
   color,
   size,
+  speed = 0.1,
 }: AnimatedTextProps) => {
   const controls = useAnimation();
   const textArray = Array.isArray(text) ? text : [text];
@@ -86,7 +88,7 @@ export const ShowWeddingText = ({
         initial="hidden"
         animate={controls}
         variants={{
-          visible: { transition: { staggerChildren: 0.1 } },
+          visible: { transition: { staggerChildren: speed } },
           hidden: {},
         }}
         aria-hidden

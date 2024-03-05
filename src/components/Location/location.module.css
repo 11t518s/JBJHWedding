@@ -1,0 +1,23 @@
+.circleContainer {
+  display: flex;
+  align-items: center;
+}
+
+.circleWithText {
+  display: inline-block;
+  padding: 0 6px;
+  border-radius: 10px;
+  margin-right: 4px;
+}
+
+.circle {
+  width: 16px;
+  height: 16px;
+  border-radius: 16px;
+}
+
+.busNumberContainer {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}

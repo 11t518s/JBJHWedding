@@ -1,11 +1,11 @@
 "use client";
 
 import { ShowWeddingText } from "@/animations";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import styles from "./gallery.module.css";
 import { Modal } from "./Modal";
 import { motion } from "framer-motion";
-import { images } from "@/constants";
+import { images, thumbnailImages } from "@/constants";
 
 export const Gallery = () => {
   const [imageIndex, setImageIndex] = useState<null | number>(null);
@@ -26,44 +26,43 @@ export const Gallery = () => {
           justifyContent: "center",
           alignItems: "center",
           flexWrap: "wrap",
-          gap: 30,
+          gap: 8,
         }}
       >
-        {images.map((item, index) => (
-          <motion.div
-            className={styles.box}
-            layoutId={String(index)}
-            key={item}
-            whileHover={{
-              scale: 1.1,
-              transition: { duration: 0.3 },
-            }}
-            // style={{
-            //   width: 100,
-            //   height: 100,
-            // }}
-          >
-            <img
+        {[...thumbnailImages].map((item, index) => {
+          return (
+            <motion.div
+              className={styles.box}
+              layoutId={String(index)}
+              key={item}
+              whileHover={{
+                transition: { duration: 0.3 },
+              }}
               onClick={() => {
                 setImageIndex(index);
               }}
-              src={item}
-            />
-          </motion.div>
-        ))}
+              style={{
+                borderRadius: 8,
+              }}
+            >
+              <img width={item ? 100 : 0} height={item ? 100 : 0} src={item} />
+            </motion.div>
+          );
+        })}
       </div>
-      <div style={{ position: "absolute" }}>
-        {imageIndex !== null && (
-          <Modal
-            index={imageIndex}
-            layoutId={String(imageIndex)}
-            onDissmiss={() => {
-              setImageIndex(null);
-              console.log("cc");
-            }}
-          />
-        )}
-      </div>
+      {imageIndex !== null && (
+        <Modal
+          index={imageIndex}
+          layoutId={String(imageIndex)}
+          onDissmiss={() => {
+            setImageIndex(null);
+          }}
+        />
+      )}
+      {/* 이미지를 미리 불러오기 위한 처리 */}
+      {images.map((item) => (
+        <img width={0} height={0} src={item} key={item} />
+      ))}
     </>
   );
 };

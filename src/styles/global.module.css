@@ -1,12 +1,15 @@
 .screenContainer {
-  overflow: scroll; /* visible 같은 속성은 피해주세요 */
+  overflow: scroll;
   width: 100vw;
   height: 100svh;
-  scroll-snap-type: y mandatory; /* y축, 맨데토리 */
+  scroll-snap-type: y mandatory;
+  max-width: 720px;
+  margin: 0 auto;
 }
 
 .screen {
-  width: 100vw; /* 캐러셀처럼, 부모와 자식의 크기가 동일해야 보기 좋습니다. */
+  width: 100vw;
   height: 100svh;
-  scroll-snap-align: start; /* 스냅 위치를 지정합니다. 자세히는 모르겠어요.. */
+  scroll-snap-align: start;
+  max-width: 720px;
 }

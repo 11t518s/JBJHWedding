@@ -3,24 +3,9 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  border-radius: 20px;
   box-shadow:
     0 2px 3px rgba(0, 0, 0, 0.1),
     0 10px 20px rgba(0, 0, 0, 0.06);
-  font-weight: bold;
-
-  /* &:first-child,
-  &:last-child {
-    cursor: pointer;
-    background-color: rgba(216, 159, 202, 0.5);
-  }
-  &:first-child {
-    transform-origin: bottom right !important;
-  }
-
-  &:last-child {
-    transform-origin: top left !important;
-  } */
 }
 
 .box:first-child,
