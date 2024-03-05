@@ -1,23 +1,60 @@
-import { AnimatePresence, motion } from "framer-motion";
+"use client";
+
+import {
+  AnimatePresence,
+  LazyMotion,
+  domAnimation,
+  motion,
+  m,
+} from "framer-motion";
 import { ReactNode, useState } from "react";
+import Icons from "../icons";
 
 type AccordionProps = {
   initiallyOpen?: boolean;
-  children: ReactNode;
+  header: ReactNode;
+  content: ReactNode;
 };
 
 export const Accordion = ({
   initiallyOpen = false,
-  children,
+  header,
+  content,
 }: AccordionProps) => {
   const [isOpen, setIsOpen] = useState(initiallyOpen);
   return (
     <>
       <motion.header
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}
         initial={false}
-        animate={{ backgroundColor: isOpen ? "#FF0088" : "#0055FF" }}
         onClick={() => setIsOpen((prev) => !prev)}
-      />
+      >
+        {header}
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <Icons iconName="chevronUp" />
+          </motion.div>
+        )}
+        {!isOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <Icons iconName="chevronDown" />
+          </motion.div>
+        )}
+      </motion.header>
       <AnimatePresence initial={false}>
         {isOpen && (
           <motion.section
@@ -30,8 +67,11 @@ export const Accordion = ({
               collapsed: { opacity: 0, height: 0 },
             }}
             transition={{ duration: 0.8, ease: [0.04, 0.62, 0.23, 0.98] }}
+            style={{
+              overflow: "hidden",
+            }}
           >
-            {children}
+            {content}
           </motion.section>
         )}
       </AnimatePresence>

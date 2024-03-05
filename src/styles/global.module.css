@@ -13,3 +13,9 @@
   scroll-snap-align: start;
   max-width: 720px;
 }
+
+.contentContainer {
+  display: flex;
+  padding: 20px 40px;
+  gap: 20px;
+}

@@ -2,7 +2,6 @@ import { images } from "@/constants";
 import { P } from "@/design-system";
 import { GeneralModal } from "@/design-system/Modals";
 import Icons from "@/design-system/icons";
-import { useInnerSize } from "@/hooks/useInnerSize";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
