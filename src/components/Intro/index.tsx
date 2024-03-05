@@ -9,7 +9,14 @@ export const Intro = () => {
         height: "100vh",
       }}
     >
-      <Image src="/Cover.png" alt="배경" fill priority quality={100} />
+      <Image
+        src="/Cover.png"
+        alt="배경"
+        fill
+        priority
+        quality={100}
+        objectFit="cover"
+      />
       <div
         style={{
           display: "flex",

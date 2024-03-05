@@ -21,7 +21,7 @@ export const Share = () => {
       content: {
         title: "💌 정빈 & 정화 결혼식에 초대합니다!",
         description: "5월 18일 토요일 오후 5시 아펠가모 공덕 7층 라로브홀",
-        imageUrl: `/Invitation_WebOGimg.png`,
+        imageUrl: process.env.NEXT_PUBLIC_PUBLIC_URL + `/OG.png`,
         link: {
           mobileWebUrl: "https://jbjh-wedding.vercel.app/",
           webUrl: "https://jbjh-wedding.vercel.app/",
@@ -62,17 +62,28 @@ export const Share = () => {
           <Icons iconName="kakaotalk" />
         </div>
         <CopyToClipboard
-          text="https://jbjh-wedding.vercel.app"
-          onCopy={urlShareRef.current?.showToast}
+          text={process.env.NEXT_PUBLIC_PUBLIC_URL || ""}
+          onCopy={() => urlShareRef.current?.showToast()}
         >
-          <Icons iconName="link" />
+          <button
+            style={{
+              background: "transparent",
+              border: 0,
+            }}
+          >
+            <Icons iconName="link" />
+          </button>
         </CopyToClipboard>
       </div>
       <P variant="regular" color="medium" size={12}>
         © 2024, Derrick Choi. ALL RIGHTS RESERVED.
       </P>
 
-      <Toast message="URL 링크가 복사되었어요" ref={urlShareRef} />
+      <Toast
+        message="URL 링크가 복사되었어요"
+        ref={urlShareRef}
+        timeout={2000}
+      />
     </>
   );
 };

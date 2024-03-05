@@ -36,6 +36,7 @@ const Toast = forwardRef<ToastHandler, ToastProps>(
               position: "fixed",
               top: 60,
               width: "100vw",
+              maxWidth: "720px",
               display: "flex",
               justifyContent: "center",
             }}

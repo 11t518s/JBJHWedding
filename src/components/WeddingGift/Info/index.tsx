@@ -43,7 +43,7 @@ export const Info = ({ name, role, account }: InfoProps) => {
 
         <CopyToClipboard
           text={`${account} ${name}`}
-          onCopy={toastRef.current?.showToast}
+          onCopy={() => toastRef.current?.showToast()}
         >
           <button
             style={{

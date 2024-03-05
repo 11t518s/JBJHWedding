@@ -31,10 +31,10 @@ export default function Home() {
         <Section>
           <Location />
         </Section>
-        <Section>
-          <WeddingGift />
-        </Section>
+        {/* <Section></Section> */}
       </div>
+
+      <WeddingGift />
     </>
   );
 }
