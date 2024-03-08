@@ -15,11 +15,9 @@ export const Intro = () => {
         fill
         priority
         quality={100}
-        style={
-          {
-            // objectFit: "cover",
-          }
-        }
+        style={{
+          objectFit: "cover",
+        }}
       />
       <div
         style={{
