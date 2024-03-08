@@ -6,6 +6,7 @@ export const Intro = () => {
     <div
       style={{
         position: "relative",
+        height: "100vh",
       }}
     >
       <Image
