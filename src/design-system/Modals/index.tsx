@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactNode, WheelEventHandler, useEffect } from "react";
+import { ReactNode, useEffect } from "react";
 import { motion } from "framer-motion";
 import styles from "./modal.module.css";
 import Icons from "../icons";
@@ -37,7 +37,7 @@ export const GeneralModal = ({
       initial={{
         backgroundColor: "rgba(0,0,0,0)",
       }}
-      animate={{ backgroundColor: "rgba(0,0,0,0.8)" }}
+      animate={{ backgroundColor: "rgba(0,0,0)" }}
       exit={{ backgroundColor: "rgba(0,0,0,0)" }}
       className={styles.modalOverlay}
       style={{

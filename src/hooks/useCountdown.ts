@@ -21,10 +21,10 @@ const useCountDown = ({ standardDate, targetDate }: UseCountDownProps) => {
     const days = Math.floor(difference / 86400);
 
     return {
-      seconds: seconds < 0 ? 0 : seconds,
-      minutes: minutes < 0 ? 0 : minutes,
-      hours: hours < 0 ? 0 : hours,
-      days: days < 0 ? 0 : days,
+      seconds: Math.abs(seconds),
+      minutes: Math.abs(minutes),
+      hours: Math.abs(hours),
+      days: Math.abs(days),
       isOver,
     };
   };

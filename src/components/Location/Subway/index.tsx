@@ -3,7 +3,7 @@ import styles from "../location.module.css";
 
 export const Subway = () => {
   return (
-    <>
+    <div>
       <P variant="medium" color="black" size={18}>
         지하철
       </P>
@@ -46,6 +46,6 @@ export const Subway = () => {
       <P variant="regular" color="black" size={16}>
         공덕역 7, 10번 출구 도보 2분
       </P>
-    </>
+    </div>
   );
 };

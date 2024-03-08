@@ -20,6 +20,7 @@
   scroll-snap-align: start;
   max-width: 720px;
 }
+
 .contentContainer {
   display: flex;
   flex-direction: column;

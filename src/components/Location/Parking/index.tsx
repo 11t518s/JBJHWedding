@@ -3,7 +3,7 @@ import styles from "../location.module.css";
 
 export const Parking = () => {
   return (
-    <>
+    <div>
       <P variant="medium" color="black" size={18}>
         주차
       </P>
@@ -19,6 +19,6 @@ export const Parking = () => {
       <P variant="regular" color="black" size={16}>
         안내데스크에서 주차권 수령
       </P>
-    </>
+    </div>
   );
 };

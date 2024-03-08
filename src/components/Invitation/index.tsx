@@ -65,7 +65,14 @@ export const Invitation = () => {
       </div>
 
       <ShowBottomUPComponent>
-        <img src="/introduce.png" />
+        <img
+          src="/introduce.png"
+          style={{
+            width: "100vw",
+
+            maxWidth: "720px",
+          }}
+        />
       </ShowBottomUPComponent>
     </div>
   );

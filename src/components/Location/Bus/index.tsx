@@ -3,7 +3,7 @@ import styles from "../location.module.css";
 
 export const Bus = () => {
   return (
-    <>
+    <div>
       <P variant="medium" color="black" size={18}>
         버스
       </P>
@@ -29,6 +29,6 @@ export const Bus = () => {
           7013A, 7013B, 7611
         </P>
       </div>
-    </>
+    </div>
   );
 };

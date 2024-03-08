@@ -1,14 +1,14 @@
 import { ShowWeddingText } from "@/animations";
-import { P, colors } from "@/design-system";
-import styles from "./location.module.css";
+import styles from "@/styles/global.module.css";
 import { Subway } from "./Subway";
 import { Bus } from "./Bus";
 import { Parking } from "./Parking";
 import { Map } from "./Map";
+import { ShowBottomUPComponent } from "@/animations/ShowBottomUPComponent";
 
 export const Location = () => {
   return (
-    <>
+    <div className={styles.contentContainer}>
       <ShowWeddingText
         text="Location"
         variant="black"
@@ -17,13 +17,21 @@ export const Location = () => {
         el="h2"
       />
 
-      <Map />
+      <ShowBottomUPComponent position="top">
+        <Map />
+      </ShowBottomUPComponent>
 
-      <Subway />
+      <ShowBottomUPComponent>
+        <Subway />
+      </ShowBottomUPComponent>
 
-      <Bus />
+      <ShowBottomUPComponent>
+        <Bus />
+      </ShowBottomUPComponent>
 
-      <Parking />
-    </>
+      <ShowBottomUPComponent>
+        <Parking />
+      </ShowBottomUPComponent>
+    </div>
   );
 };

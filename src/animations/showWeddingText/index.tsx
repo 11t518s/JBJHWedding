@@ -116,7 +116,10 @@ export const ShowWeddingText = ({
                   <motion.span
                     key={`${char}-${charIndex}`}
                     style={{ display: "inline-block" }}
-                    variants={animation}
+                    variants={{
+                      ...animation,
+                      hidden: { ...animation.hidden, y: size / 3 },
+                    }}
                   >
                     {char}
                   </motion.span>
