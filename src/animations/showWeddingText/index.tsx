@@ -23,6 +23,8 @@ type AnimatedTextProps = {
   variant: FontVariantKey;
   color: ColorKey;
   size: FontSizeKey;
+
+  moveY?: boolean;
 };
 
 const defaultAnimations = {
@@ -48,6 +50,7 @@ export const ShowWeddingText = ({
   variant,
   color,
   size,
+  moveY = false,
 }: AnimatedTextProps) => {
   const controls = useAnimation();
   const textArray = Array.isArray(text) ? text : [text];
@@ -118,7 +121,7 @@ export const ShowWeddingText = ({
                     style={{ display: "inline-block" }}
                     variants={{
                       ...animation,
-                      hidden: { ...animation.hidden, y: size / 3 },
+                      hidden: { ...animation.hidden, y: moveY ? size / 3 : 0 },
                     }}
                   >
                     {char}

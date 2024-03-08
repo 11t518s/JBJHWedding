@@ -51,11 +51,12 @@ export const Modal = ({ index, layoutId, onDissmiss }: ModalProps) => {
               opacity: 0,
               x: directionX,
             }}
-            width="100%"
-            height="100%"
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.3 }}
             drag="x"
+            style={{
+              maxWidth: "720px",
+            }}
             dragElastic={0.7}
             onDragEnd={(_, info) => {
               if (info.offset.x > 1) {

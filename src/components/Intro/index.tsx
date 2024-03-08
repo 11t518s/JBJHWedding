@@ -37,6 +37,7 @@ export const Intro = () => {
           color="darkOrange"
           size={80}
           el="h1"
+          moveY
         />
 
         <ShowWeddingText
@@ -45,6 +46,7 @@ export const Intro = () => {
           color="darkOrange"
           size={18}
           el="p"
+          moveY
         />
       </div>
     </div>
