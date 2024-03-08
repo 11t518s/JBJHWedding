@@ -13,7 +13,14 @@ export const ComingSoon = () => {
     >
       <div className={globalStyles.contentContainer}>
         <ShowWeddingText
-          text={["Coming", "Soon"]}
+          text="Coming"
+          variant="black"
+          color="darkOrange"
+          size={48}
+          el="h2"
+        />
+        <ShowWeddingText
+          text="Soon"
           variant="black"
           color="darkOrange"
           size={48}

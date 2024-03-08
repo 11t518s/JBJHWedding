@@ -11,7 +11,15 @@ export const WeddingGift = () => {
   return (
     <div className={styles.contentContainer}>
       <ShowWeddingText
-        text={["신랑 & 신부에게", "마음 전하기"]}
+        text="신랑 & 신부에게"
+        variant="black"
+        color="darkOrange"
+        size={48}
+        el="h2"
+      />
+
+      <ShowWeddingText
+        text="마음 전하기"
         variant="black"
         color="darkOrange"
         size={48}
