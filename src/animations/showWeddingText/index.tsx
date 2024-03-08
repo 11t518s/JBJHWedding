@@ -23,7 +23,6 @@ type AnimatedTextProps = {
   variant: FontVariantKey;
   color: ColorKey;
   size: FontSizeKey;
-  speed?: number;
 };
 
 const defaultAnimations = {
@@ -35,7 +34,7 @@ const defaultAnimations = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.1,
+      duration: 0.8,
     },
   },
 };
@@ -49,7 +48,6 @@ export const ShowWeddingText = ({
   variant,
   color,
   size,
-  speed = 0.1,
 }: AnimatedTextProps) => {
   const controls = useAnimation();
   const textArray = Array.isArray(text) ? text : [text];
@@ -82,31 +80,48 @@ export const ShowWeddingText = ({
       style={{ color: colors[color], ...fontSize[size] }}
       className={fontVariant[variant].className}
     >
-      <span className="sr-only" />
+      <span
+        style={{
+          position: "absolute",
+          width: "1px",
+          height: "1px",
+          padding: "0",
+          margin: "-1px",
+          overflow: "hidden",
+          clip: "rect(0, 0, 0, 0)",
+          whiteSpace: "nowrap",
+          borderWidth: 0,
+        }}
+      >
+        {textArray.join(" ")}
+      </span>
       <motion.span
         ref={ref}
         initial="hidden"
         animate={controls}
         variants={{
-          visible: { transition: { staggerChildren: speed } },
+          visible: { transition: { staggerChildren: 0.1 } },
           hidden: {},
         }}
         aria-hidden
       >
         {textArray.map((line, lineIndex) => (
-          <span className="block" key={`${line}-${lineIndex}`}>
+          <span style={{ display: "block" }} key={`${line}-${lineIndex}`}>
             {line.split(" ").map((word, wordIndex) => (
-              <span className="inline-block" key={`${word}-${wordIndex}`}>
+              <span
+                style={{ display: "inline-block" }}
+                key={`${word}-${wordIndex}`}
+              >
                 {word.split("").map((char, charIndex) => (
                   <motion.span
                     key={`${char}-${charIndex}`}
-                    className="inline-block"
+                    style={{ display: "inline-block" }}
                     variants={animation}
                   >
                     {char}
                   </motion.span>
                 ))}
-                <span className="inline-block">&nbsp;</span>
+                <span style={{ display: "inline-block" }}>&nbsp;</span>
               </span>
             ))}
           </span>

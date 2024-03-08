@@ -7,7 +7,6 @@ export const Intro = () => {
       style={{
         position: "relative",
         height: "100svh",
-        margin: "0 auto",
       }}
     >
       <Image

@@ -6,35 +6,23 @@ import { ComingSoon } from "@/components/ComingSoon";
 import { Gallery } from "@/components/Gallery";
 import { Location } from "@/components/Location";
 import { WeddingGift } from "@/components/WeddingGift";
-import styles from "@/styles/global.module.css";
 import { PreventPinchZoom } from "./PreventPinchZoom";
 
 export default function Home() {
   return (
     <>
-      <div className={styles.screenContainer} id="screenContainer">
-        <Section>
-          <Intro />
-        </Section>
+      <div id="screenContainer">
+        <Intro />
 
-        <Section>
-          <Invitation />
-        </Section>
+        <Invitation />
 
-        <Section>
-          <ComingSoon />
-        </Section>
+        <ComingSoon />
 
-        <Section>
-          <Gallery />
-        </Section>
+        <Gallery />
 
-        <Section>
-          <Location />
-        </Section>
-        <Section isLast>
-          <WeddingGift />
-        </Section>
+        <Location />
+
+        <WeddingGift />
       </div>
 
       <PreventPinchZoom />
