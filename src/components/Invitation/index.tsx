@@ -64,7 +64,7 @@ export const Invitation = () => {
         </ShowBottomUPComponent>
       </div>
 
-      <ShowBottomUPComponent>
+      <ShowBottomUPComponent position="top">
         <img
           src="/introduce.png"
           style={{

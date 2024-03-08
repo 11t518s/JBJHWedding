@@ -24,7 +24,7 @@ export const ComingSoon = () => {
           <CountDown />
         </ShowBottomUPComponent>
       </div>
-      <ShowBottomUPComponent>
+      <ShowBottomUPComponent position="top">
         <img
           src="/countDown.png"
           style={{
