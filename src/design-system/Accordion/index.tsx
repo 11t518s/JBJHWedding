@@ -34,7 +34,7 @@ export const Accordion = ({
         onClick={() => setIsOpen((prev) => !prev)}
       >
         {header}
-        {isOpen && (
+        {isOpen ? (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -43,8 +43,8 @@ export const Accordion = ({
           >
             <Icons iconName="chevronUp" />
           </motion.div>
-        )}
-        {!isOpen && (
+        ) : null}
+        {!isOpen ? (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -53,10 +53,10 @@ export const Accordion = ({
           >
             <Icons iconName="chevronDown" />
           </motion.div>
-        )}
+        ) : null}
       </motion.header>
       <AnimatePresence initial={false}>
-        {isOpen && (
+        {isOpen ? (
           <motion.section
             key="content"
             initial="collapsed"
@@ -73,7 +73,7 @@ export const Accordion = ({
           >
             {content}
           </motion.section>
-        )}
+        ) : null}
       </AnimatePresence>
     </>
   );

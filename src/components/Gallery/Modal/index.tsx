@@ -77,7 +77,7 @@ export const Modal = ({ index, layoutId, onDissmiss }: ModalProps) => {
           />
         </div>
       </AnimatePresence>
-      {showIndex && (
+      {showIndex ? (
         <div
           style={{
             display: "flex",
@@ -100,7 +100,7 @@ export const Modal = ({ index, layoutId, onDissmiss }: ModalProps) => {
             <Icons iconName="chevronRight" />
           </div>
         </div>
-      )}
+      ) : null}
     </GeneralModal>
   );
 };

@@ -26,7 +26,7 @@ const Toast = forwardRef<ToastHandler, ToastProps>(
 
     return (
       <AnimatePresence>
-        {isVisible && (
+        {isVisible ? (
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -54,7 +54,7 @@ const Toast = forwardRef<ToastHandler, ToastProps>(
               </P>
             </div>
           </motion.div>
-        )}
+        ) : null}
       </AnimatePresence>
     );
   }

@@ -55,7 +55,7 @@ export const Gallery = () => {
           })}
         </div>
       </ShowBottomUPComponent>
-      {imageIndex !== null && (
+      {imageIndex !== null ? (
         <Modal
           index={imageIndex}
           layoutId={String(imageIndex)}
@@ -63,7 +63,7 @@ export const Gallery = () => {
             setImageIndex(null);
           }}
         />
-      )}
+      ) : null}
       {/* 이미지를 미리 불러오기 위한 처리 */}
       {images.map((item) => (
         <img
