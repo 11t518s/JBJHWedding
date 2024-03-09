@@ -6,7 +6,7 @@ export const Intro = () => {
     <div
       style={{
         position: "relative",
-        height: "100vh",
+        height: "100lvh",
       }}
     >
       <img
@@ -14,7 +14,7 @@ export const Intro = () => {
         alt="배경"
         style={{
           objectFit: "cover",
-          height: "100vh",
+          height: "100lvh",
           width: "100vw",
           maxWidth: "720px",
           position: "absolute",
