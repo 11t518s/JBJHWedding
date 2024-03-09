@@ -9,7 +9,18 @@ export const Intro = () => {
         height: "100vh",
       }}
     >
-      <Image
+      <img
+        src="/Cover.png"
+        alt="배경"
+        style={{
+          objectFit: "cover",
+          height: "100vh",
+          width: "100vw",
+          maxWidth: "720px",
+          position: "absolute",
+        }}
+      />
+      {/* <Image
         src="/Cover.png"
         alt="배경"
         fill
@@ -18,7 +29,7 @@ export const Intro = () => {
         style={{
           objectFit: "cover",
         }}
-      />
+      /> */}
       <div
         style={{
           display: "flex",
