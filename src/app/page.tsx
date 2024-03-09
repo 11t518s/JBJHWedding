@@ -11,19 +11,17 @@ import { PreventPinchZoom } from "./PreventPinchZoom";
 export default function Home() {
   return (
     <>
-      <div id="screenContainer">
-        <Intro />
+      <Intro />
 
-        <Invitation />
+      <Invitation />
 
-        <ComingSoon />
+      <ComingSoon />
 
-        <Gallery />
+      <Gallery />
 
-        <Location />
+      <Location />
 
-        <WeddingGift />
-      </div>
+      <WeddingGift />
 
       <PreventPinchZoom />
     </>

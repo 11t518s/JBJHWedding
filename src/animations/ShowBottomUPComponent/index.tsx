@@ -18,7 +18,7 @@ export const ShowBottomUPComponent = ({
 }: ShowBottomUPComponentProps) => {
   const controls = useAnimation();
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { amount: 0.2, once });
+  const isInView = useInView(ref, { amount: 0.3, once });
 
   useEffect(() => {
     let timeout: NodeJS.Timeout;

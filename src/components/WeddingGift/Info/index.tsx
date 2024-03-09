@@ -22,6 +22,7 @@ export const Info = ({ name, role, account }: InfoProps) => {
           flexDirection: "column",
           paddingLeft: "20px",
           paddingTop: "12px",
+          gap: "4px",
         }}
       >
         <div
@@ -53,6 +54,7 @@ export const Info = ({ name, role, account }: InfoProps) => {
               backgroundColor: colors.black,
               borderRadius: "100px",
               padding: "10px 20px",
+              marginTop: "8px",
             }}
           >
             <P variant="regular" color="white" size={16}>

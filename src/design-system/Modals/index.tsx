@@ -17,17 +17,9 @@ export const GeneralModal = ({
   onDismissClick,
 }: ModalProps) => {
   useEffect(() => {
-    const container = document.getElementById("screenContainer");
-    const preventScroll = (e: WheelEvent) => {
-      e.preventDefault();
-      e.stopPropagation();
-
-      return false;
-    };
-
-    container?.addEventListener("wheel", preventScroll);
+    document.body.style.overflowY = "hidden";
     return () => {
-      container?.removeEventListener("wheel", preventScroll);
+      document.body.style.removeProperty("overflowY");
     };
   }, []);
 
@@ -40,10 +32,6 @@ export const GeneralModal = ({
       animate={{ backgroundColor: "rgba(0,0,0)" }}
       exit={{ backgroundColor: "rgba(0,0,0,0)" }}
       className={styles.modalOverlay}
-      style={{
-        maxWidth: window.innerWidth,
-        maxHeight: window.innerHeight,
-      }}
     >
       <div
         onClick={onDismissClick}
@@ -51,6 +39,7 @@ export const GeneralModal = ({
           position: "absolute",
           top: 16,
           right: 20,
+          zIndex: 999,
         }}
       >
         <Icons iconName="close" />

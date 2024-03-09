@@ -4,10 +4,22 @@ import styles from "../location.module.css";
 export const Subway = () => {
   return (
     <div>
-      <P variant="medium" color="black" size={18}>
+      <P
+        variant="medium"
+        color="black"
+        size={18}
+        style={{
+          paddingBottom: 8,
+        }}
+      >
         지하철
       </P>
-      <div className={styles.circleContainer}>
+      <div
+        className={styles.circleContainer}
+        style={{
+          paddingBottom: 4,
+        }}
+      >
         <div
           className={styles.circleWithText}
           style={{ backgroundColor: colors.subBrown }}

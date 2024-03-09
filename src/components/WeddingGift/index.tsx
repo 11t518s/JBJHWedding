@@ -11,18 +11,10 @@ export const WeddingGift = () => {
   return (
     <div className={styles.contentContainer}>
       <ShowWeddingText
-        text="신랑 & 신부에게"
+        text={["신랑 & 신부에게", "마음 전하기"]}
         variant="black"
         color="darkOrange"
-        size={48}
-        el="h2"
-      />
-
-      <ShowWeddingText
-        text="마음 전하기"
-        variant="black"
-        color="darkOrange"
-        size={48}
+        size={38}
         el="h2"
       />
 
@@ -36,6 +28,7 @@ export const WeddingGift = () => {
             backgroundColor: colors.black,
             height: 1,
             width: "100%",
+            margin: "20px 0",
           }}
         />
 
@@ -65,6 +58,7 @@ export const WeddingGift = () => {
             backgroundColor: colors.black,
             height: 1,
             width: "100%",
+            margin: "20px 0",
           }}
         />
         <Accordion
@@ -92,6 +86,7 @@ export const WeddingGift = () => {
             backgroundColor: colors.black,
             height: 1,
             width: "100%",
+            margin: "20px 0",
           }}
         />
       </ShowBottomUPComponent>

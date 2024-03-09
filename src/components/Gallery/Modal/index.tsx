@@ -12,6 +12,7 @@ type ModalProps = {
 };
 
 export const Modal = ({ index, layoutId, onDissmiss }: ModalProps) => {
+  const [showIndex, setShowIndex] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(index);
   const [directionX, setDirectionX] = useState("0");
 
@@ -35,6 +36,12 @@ export const Modal = ({ index, layoutId, onDissmiss }: ModalProps) => {
     setCurrentIndex(index);
   }, [index]);
 
+  useEffect(() => {
+    setTimeout(() => {
+      setShowIndex(true);
+    }, 500);
+  }, []);
+
   return (
     <GeneralModal layoutId={layoutId} onDismissClick={onDissmiss}>
       <AnimatePresence initial={true}>
@@ -56,6 +63,8 @@ export const Modal = ({ index, layoutId, onDissmiss }: ModalProps) => {
             drag="x"
             style={{
               maxWidth: "720px",
+              width: "100vw",
+              objectFit: "contain",
             }}
             dragElastic={0.7}
             onDragEnd={(_, info) => {
@@ -66,27 +75,32 @@ export const Modal = ({ index, layoutId, onDissmiss }: ModalProps) => {
               }
             }}
           />
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignContent: "center",
-              padding: "10px",
-            }}
-          >
-            <div onClick={handlePrev}>
-              <Icons iconName="chevronLeft" />
-            </div>
-            <P variant="medium" color="white" size={16}>
-              {currentIndex + 1}/{images.length}
-            </P>
-
-            <div onClick={handleNext}>
-              <Icons iconName="chevronRight" />
-            </div>
-          </div>
         </div>
       </AnimatePresence>
+      {showIndex && (
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignContent: "center",
+            bottom: 30,
+            maxWidth: "720px",
+            width: "100vw",
+            position: "absolute",
+          }}
+        >
+          <div onClick={handlePrev}>
+            <Icons iconName="chevronLeft" />
+          </div>
+          <P variant="medium" color="white" size={16}>
+            {currentIndex + 1}/{images.length}
+          </P>
+
+          <div onClick={handleNext}>
+            <Icons iconName="chevronRight" />
+          </div>
+        </div>
+      )}
     </GeneralModal>
   );
 };

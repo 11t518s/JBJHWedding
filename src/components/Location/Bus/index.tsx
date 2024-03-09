@@ -4,7 +4,14 @@ import styles from "../location.module.css";
 export const Bus = () => {
   return (
     <div>
-      <P variant="medium" color="black" size={18}>
+      <P
+        variant="medium"
+        color="black"
+        size={18}
+        style={{
+          paddingBottom: 8,
+        }}
+      >
         버스
       </P>
 

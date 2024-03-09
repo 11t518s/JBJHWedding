@@ -58,6 +58,7 @@ export const Share = () => {
         style={{
           display: "flex",
           gap: 12,
+          marginBottom: 32,
         }}
       >
         <div onClick={handleShareKakao}>
