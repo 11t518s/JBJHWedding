@@ -1,5 +1,4 @@
-import { P, colors } from "@/design-system";
-import styles from "../location.module.css";
+import { P } from "@/design-system";
 
 export const Parking = () => {
   return (
