@@ -62,6 +62,7 @@ export const Map = () => {
       ref={kakaoMapRef}
       style={{
         width: "calc(100vw - 40px)",
+        maxWidth: "720px",
         height: 300,
         borderRadius: 12,
         zIndex: 1,
