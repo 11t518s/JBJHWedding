@@ -26,13 +26,17 @@ export const regular = Noto_Sans_KR({
 });
 
 export const fontSize = {
-  80: {
-    fontSize: "80px",
-    lineHeight: "100.8px",
+  64: {
+    fontSize: "64px",
+    lineHeight: "64px",
   },
   48: {
     fontSize: "48px",
     LineHeight: "60.48px",
+  },
+  40: {
+    fontSize: "40px",
+    LineHeight: "50.4px",
   },
 
   38: {

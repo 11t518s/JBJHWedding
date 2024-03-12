@@ -12,7 +12,7 @@ export const colors = {
   dark: "#333333",
   medium: "#828282",
   light: "#E0E0E0",
-  white: "#ffffff",
+  white: "#fffffd",
 };
 
 export type ColorKey = keyof typeof colors;

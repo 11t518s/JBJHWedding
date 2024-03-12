@@ -60,7 +60,13 @@ export const Map = () => {
   return (
     <div
       ref={kakaoMapRef}
-      style={{ width: "100%", height: 300, borderRadius: 8, zIndex: 1 }}
+      style={{
+        width: "calc(100vw - 40px)",
+        height: 300,
+        borderRadius: 12,
+        zIndex: 1,
+        border: "2px solid",
+      }}
     />
   );
 };

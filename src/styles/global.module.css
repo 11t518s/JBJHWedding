@@ -27,3 +27,11 @@
   padding: 40px 20px;
   gap: 20px;
 }
+
+.sectionContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 40px 0;
+}

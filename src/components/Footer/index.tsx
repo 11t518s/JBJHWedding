@@ -1,18 +1,14 @@
 "use client";
 
-import { P } from "@/design-system";
+import { ShowBottomUPComponent } from "@/animations/ShowBottomUPComponent";
+import { P, colors } from "@/design-system";
 import Toast, { ToastHandler } from "@/design-system/Toast";
 import Icons from "@/design-system/icons";
+import { color } from "framer-motion";
 import { useEffect, useRef } from "react";
 import CopyToClipboard from "react-copy-to-clipboard";
 
-declare global {
-  interface Window {
-    Kakao: any;
-  }
-}
-
-export const Share = () => {
+export const Footer = () => {
   const urlShareRef = useRef<ToastHandler>(null);
 
   const handleShareKakao = () => {
@@ -52,8 +48,21 @@ export const Share = () => {
       }, 300);
     }
   }, []);
+
   return (
-    <>
+    <div
+      style={{
+        backgroundColor: colors.dark,
+        width: "100vw",
+        maxWidth: "720px",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        padding: "32px",
+        boxSizing: "border-box",
+      }}
+    >
       <div
         style={{
           display: "flex",
@@ -81,12 +90,11 @@ export const Share = () => {
       <P variant="regular" color="medium" size={12}>
         © 2024, Derrick Choi. ALL RIGHTS RESERVED.
       </P>
-
       <Toast
         message="URL 링크가 복사되었어요"
         ref={urlShareRef}
         timeout={2000}
       />
-    </>
+    </div>
   );
 };

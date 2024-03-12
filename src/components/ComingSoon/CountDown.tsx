@@ -2,17 +2,27 @@
 
 import { P } from "@/design-system";
 import styles from "./comingSoon.module.css";
+import globalStyles from "@/styles/global.module.css";
 import useCountDown from "@/hooks/useCountdown";
 import dayjs from "dayjs";
 
 export const CountDown = () => {
   const { days, hours, minutes, seconds, isOver } = useCountDown({
+    // standardDate: dayjs("2024-05-18T17:00:00"),
     standardDate: dayjs(),
     targetDate: dayjs("2024-05-18T17:00:00"),
   });
 
   return (
-    <>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        flexDirection: "column",
+        margin: "20px 0",
+      }}
+    >
       <div className={styles.countDownIntroTextContainer}>
         <P variant="regular" color="black" size={16}>
           정빈 & 정화의 결혼식이{" "}
@@ -81,6 +91,6 @@ export const CountDown = () => {
           </P>
         </div>
       </div>
-    </>
+    </div>
   );
 };

@@ -5,38 +5,24 @@ import { ShowBottomUPComponent } from "@/animations/ShowBottomUPComponent";
 
 export const ComingSoon = () => {
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-      }}
-    >
-      <div className={globalStyles.contentContainer}>
-        <ShowWeddingText
-          text="Coming"
-          variant="black"
-          color="darkOrange"
-          size={48}
-          el="h2"
-        />
-        <ShowWeddingText
-          text="Soon"
-          variant="black"
-          color="darkOrange"
-          size={48}
-          el="h2"
-        />
+    <div className={globalStyles.sectionContainer}>
+      <ShowWeddingText
+        text="Coming Soon"
+        variant="black"
+        color="darkOrange"
+        size={40}
+        el="h2"
+      />
 
-        <ShowBottomUPComponent>
-          <CountDown />
-        </ShowBottomUPComponent>
-      </div>
+      <ShowBottomUPComponent>
+        <CountDown />
+      </ShowBottomUPComponent>
       <ShowBottomUPComponent position="top">
         <img
-          src="/countDown.png"
+          src="/ComingSoon.png"
           style={{
-            width: "100vw",
-            maxWidth: "720px",
+            width: "calc(100vw - 40px)",
+            maxWidth: "680px",
           }}
         />
       </ShowBottomUPComponent>

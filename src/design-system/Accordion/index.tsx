@@ -23,7 +23,16 @@ export const Accordion = ({
 }: AccordionProps) => {
   const [isOpen, setIsOpen] = useState(initiallyOpen);
   return (
-    <>
+    <div
+      style={{
+        border: "2px solid",
+        borderRadius: "12px",
+        padding: "16px",
+        width: "calc(100vw - 40px)",
+        maxWidth: "680px",
+        boxSizing: "border-box",
+      }}
+    >
       <motion.header
         style={{
           display: "flex",
@@ -75,6 +84,6 @@ export const Accordion = ({
           </motion.section>
         ) : null}
       </AnimatePresence>
-    </>
+    </div>
   );
 };

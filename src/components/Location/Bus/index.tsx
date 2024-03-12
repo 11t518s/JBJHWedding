@@ -3,7 +3,7 @@ import styles from "../location.module.css";
 
 export const Bus = () => {
   return (
-    <div>
+    <div className={styles.sectionContainer}>
       <P
         variant="medium"
         color="black"
@@ -14,7 +14,6 @@ export const Bus = () => {
       >
         버스
       </P>
-
       <P variant="regular" color="black" size={16}>
         공덕역 7, 10번 출구 도보 2분
       </P>

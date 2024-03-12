@@ -1,16 +1,16 @@
 .countDownIntroTextContainer {
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
   gap: 4px;
+  margin-bottom: 20px;
 }
 
 .countDownContainer {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: flex-start;
   gap: 4px;
-  margin-top: 20px;
 }
 
 .countDown {

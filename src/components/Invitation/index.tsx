@@ -7,72 +7,82 @@ import { ShowBottomUPComponent } from "@/animations/ShowBottomUPComponent";
 
 export const Invitation = () => {
   return (
-    <div className={styles.container}>
-      <div className={globalStyles.contentContainer}>
-        <div className={styles.text}>
-          <ShowWeddingText
-            text="Invitation"
-            variant="black"
-            color="darkOrange"
-            size={48}
-            el="h2"
-          />
-
-          <ShowBottomUPComponent>
-            <P variant="regular" color="black" size={16}>
-              1,000일 동안 서로에 대해 알아가며
-            </P>
-
-            <P variant="regular" color="black" size={16}>
-              평생을 함께할 인연임을 확신하게 되었습니다.
-            </P>
-
-            <P variant="regular" color="black" size={16}>
-              이제 부부의 연으로 백년해로를 이루려 합니다.
-            </P>
-
-            <P variant="regular" color="black" size={16}>
-              평생을 좋은 남편, 좋은 아내로 살겠습니다.
-            </P>
-
-            <P variant="regular" color="black" size={16}>
-              그 시작의 자리에 함께해 주시기를 바랍니다.
-            </P>
-          </ShowBottomUPComponent>
-        </div>
-
-        <ShowBottomUPComponent>
-          {brideAndGroom.map((item) => (
-            <div className={styles.brideAndGroom} key={item.name}>
-              <P variant="regular" color="black" size={16}>
-                {item.parent}
-              </P>
-
-              <div className={styles.dotContainer}>
-                {Array.from({ length: item.dot }).map((item, index) => (
-                  <div key={index} className={styles.dot}>
-                    {" "}
-                  </div>
-                ))}
-              </div>
-
-              <P variant="black" color="black" size={24}>
-                {item.name}
-              </P>
-            </div>
-          ))}
-        </ShowBottomUPComponent>
+    <div className={globalStyles.contentContainer}>
+      <div className={styles.text}>
+        <ShowWeddingText
+          text="Groom & Bride"
+          variant="black"
+          color="darkOrange"
+          size={40}
+          el="h2"
+        />
       </div>
 
-      <ShowBottomUPComponent position="top">
-        <img
-          src="/introduce.png"
+      <ShowBottomUPComponent>
+        <div
           style={{
-            width: "100vw",
-
-            maxWidth: "720px",
+            display: "flex",
+            flexDirection: "column",
+            gap: 12,
           }}
-        />
+        >
+          <img
+            src="/Groom.png"
+            style={{
+              width: "calc(100vw - 40px)",
+              maxWidth: "680px",
+            }}
+          />
+
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              gap: "8px",
+            }}
+          >
+            <P variant="regular" color="black" size={16}>
+              (故)이순남·김은숙의 차남
+            </P>
+            <P variant="black" color="black" size={24}>
+              정빈
+            </P>
+          </div>
+        </div>
+      </ShowBottomUPComponent>
+
+      <ShowBottomUPComponent>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: 12,
+          }}
+        >
+          <img
+            src="/Bride.png"
+            style={{
+              width: "calc(100vw - 40px)",
+              maxWidth: "680px",
+            }}
+          />
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              gap: "8px",
+            }}
+          >
+            <P variant="regular" color="black" size={16}>
+              김명철·김금례의 장녀
+            </P>
+            <P variant="black" color="black" size={24}>
+              정화
+            </P>
+          </div>
+        </div>
       </ShowBottomUPComponent>
     </div>
   );

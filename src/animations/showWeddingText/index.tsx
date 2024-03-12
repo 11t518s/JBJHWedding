@@ -107,6 +107,11 @@ export const ShowWeddingText = ({
           hidden: {},
         }}
         aria-hidden
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
       >
         {textArray.map((line, lineIndex) => (
           <span style={{ display: "block" }} key={`${line}-${lineIndex}`}>

@@ -3,7 +3,7 @@ import styles from "../location.module.css";
 
 export const Subway = () => {
   return (
-    <div>
+    <div className={styles.sectionContainer}>
       <P
         variant="medium"
         color="black"
