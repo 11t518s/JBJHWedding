@@ -23,7 +23,7 @@ export const Accordion = ({
 }: AccordionProps) => {
   const [isOpen, setIsOpen] = useState(initiallyOpen);
   return (
-    <div
+    <motion.div
       style={{
         border: "2px solid",
         borderRadius: "12px",
@@ -84,6 +84,6 @@ export const Accordion = ({
           </motion.section>
         ) : null}
       </AnimatePresence>
-    </div>
+    </motion.div>
   );
 };

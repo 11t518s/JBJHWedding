@@ -12,6 +12,7 @@ export const WeddingGift = () => {
       className={styles.sectionContainer}
       style={{
         gap: "20px",
+        paddingBottom: "20px",
       }}
     >
       <ShowWeddingText

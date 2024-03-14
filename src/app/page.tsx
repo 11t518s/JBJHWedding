@@ -6,13 +6,12 @@ import { Gallery } from "@/components/Gallery";
 import { Location } from "@/components/Location";
 import { WeddingGift } from "@/components/WeddingGift";
 import { PreventPinchZoom } from "./PreventPinchZoom";
-import styles from "@/styles/global.module.css";
 import { colors } from "@/design-system";
 import { Footer } from "@/components/Footer";
 
 export default function Home() {
   return (
-    <div className={styles.sectionContainer}>
+    <div>
       <Intro />
 
       <hr
@@ -23,6 +22,7 @@ export default function Home() {
           backgroundColor: colors.black,
           margin: 0,
           padding: 0,
+          border: 0,
         }}
       />
 
@@ -36,6 +36,8 @@ export default function Home() {
           backgroundColor: colors.black,
           margin: 0,
           padding: 0,
+
+          border: 0,
         }}
       />
 
@@ -49,6 +51,8 @@ export default function Home() {
           backgroundColor: colors.black,
           margin: 0,
           padding: 0,
+
+          border: 0,
         }}
       />
 
@@ -62,6 +66,7 @@ export default function Home() {
           backgroundColor: colors.black,
           margin: 0,
           padding: 0,
+          border: 0,
         }}
       />
       <Location />
@@ -74,6 +79,7 @@ export default function Home() {
           backgroundColor: colors.black,
           margin: 0,
           padding: 0,
+          border: 0,
         }}
       />
       <WeddingGift />
