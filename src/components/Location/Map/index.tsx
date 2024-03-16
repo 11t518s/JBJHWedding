@@ -55,20 +55,38 @@ export const Map = () => {
       // 마커가 지도 위에 표시되도록 설정합니다
       // infowindow.open(map, marker);
       marker.setMap(map);
+
+      map.setDraggable(false);
+      map.setZoomable(false);
     });
   }, []);
   return (
     <div
-      ref={kakaoMapRef}
       style={{
-        width: "calc(100vw - 40px)",
-        maxWidth: "680px",
-        height: 300,
-        borderRadius: 12,
-        zIndex: 1,
-        border: "2px solid",
-        boxSizing: "border-box",
+        position: "relative",
       }}
-    />
+    >
+      <div
+        style={{
+          width: "calc(100vw - 40px)",
+          maxWidth: "680px",
+          height: 300,
+          position: "absolute",
+          zIndex: 100,
+        }}
+      />
+      <div
+        ref={kakaoMapRef}
+        style={{
+          width: "calc(100vw - 40px)",
+          maxWidth: "680px",
+          height: 300,
+          borderRadius: 12,
+          zIndex: 1,
+          border: "2px solid",
+          boxSizing: "border-box",
+        }}
+      />
+    </div>
   );
 };

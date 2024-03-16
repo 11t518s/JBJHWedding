@@ -3,7 +3,7 @@ import { P } from "@/design-system";
 import { GeneralModal } from "@/design-system/Modals";
 import Icons from "@/design-system/icons";
 import { AnimatePresence, motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { WheelEventHandler, useEffect, useState } from "react";
 
 type ModalProps = {
   index: number;
@@ -40,6 +40,35 @@ export const Modal = ({ index, layoutId, onDissmiss }: ModalProps) => {
     setTimeout(() => {
       setShowIndex(true);
     }, 500);
+  }, []);
+
+  useEffect(() => {
+    document.body.style.overflowY = "hidden";
+    return () => {
+      document.body.style.removeProperty("overflowY");
+    };
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = (e: WheelEvent) => {
+      e.preventDefault();
+    };
+
+    const handleTouchMove = (e: TouchEvent) => {
+      e.preventDefault();
+    };
+
+    document.body.style.overflow = "hidden";
+    document.body.addEventListener("wheel", handleScroll, { passive: false });
+    document.body.addEventListener("touchmove", handleTouchMove, {
+      passive: false,
+    });
+
+    return () => {
+      document.body.style.overflow = "auto";
+      document.body.removeEventListener("wheel", handleScroll);
+      document.body.removeEventListener("touchmove", handleTouchMove);
+    };
   }, []);
 
   return (
