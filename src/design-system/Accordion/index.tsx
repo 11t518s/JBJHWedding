@@ -16,12 +16,31 @@ type AccordionProps = {
   content: ReactNode;
 };
 
+const delay = (milliseconds: number) => {
+  return new Promise<void>((resolve) => {
+    setTimeout(() => {
+      resolve();
+    }, milliseconds);
+  });
+};
+
 export const Accordion = ({
   initiallyOpen = false,
   header,
   content,
 }: AccordionProps) => {
   const [isOpen, setIsOpen] = useState(initiallyOpen);
+  const [isOpenLoading, setIsOpenLoading] = useState(false);
+  const handleModalOpen = async () => {
+    if (isOpenLoading) {
+      return;
+    }
+    setIsOpen((prev) => !prev);
+    setIsOpenLoading(true);
+    await delay(1200);
+    setIsOpenLoading(false);
+  };
+
   return (
     <AnimatePresence initial={false}>
       <motion.div
@@ -41,7 +60,7 @@ export const Accordion = ({
             alignItems: "center",
           }}
           initial={false}
-          onClick={() => setIsOpen((prev) => !prev)}
+          onClick={handleModalOpen}
         >
           {header}
           {isOpen ? (
