@@ -31,6 +31,7 @@ export const Gallery = () => {
             alignItems: "center",
             flexWrap: "wrap",
             gap: 8,
+            marginTop: 12,
           }}
         >
           {thumbnailImages.map((item, index) => {
@@ -49,6 +50,8 @@ export const Gallery = () => {
                   borderRadius: 8,
                 }}
               >
+                {/* TODO margin에 딱 맞게 좌우 여백 만들지 말기  */}
+                {/* 모달 올라왔을 때 스크롤 막기 */}
                 <Image width={100} height={100} src={item} alt="갤러리" />
               </motion.div>
             );

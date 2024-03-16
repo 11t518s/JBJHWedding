@@ -37,6 +37,7 @@ export const WeddingGift = () => {
               justifyContent: "center",
               alignItems: "center",
               flexDirection: "column",
+              marginBottom: 12,
             }}
           >
             <P variant="medium" color="black" size={16}>

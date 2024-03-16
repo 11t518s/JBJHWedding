@@ -21,6 +21,7 @@ export const ComingSoon = () => {
         <img
           src="/ComingSoon.png"
           style={{
+            marginTop: "4px",
             width: "calc(100vw - 40px)",
             maxWidth: "680px",
           }}

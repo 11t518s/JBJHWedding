@@ -29,10 +29,12 @@ export const fontSize = {
   64: {
     fontSize: "64px",
     lineHeight: "64px",
+    letterSpacing: "-2",
   },
   48: {
     fontSize: "48px",
     LineHeight: "60.48px",
+    letterSpacing: "-2",
   },
   40: {
     fontSize: "40px",

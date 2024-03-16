@@ -27,7 +27,7 @@ export const Accordion = ({
       style={{
         border: "2px solid",
         borderRadius: "12px",
-        padding: "16px",
+        padding: "20px",
         width: "calc(100vw - 40px)",
         maxWidth: "680px",
         boxSizing: "border-box",

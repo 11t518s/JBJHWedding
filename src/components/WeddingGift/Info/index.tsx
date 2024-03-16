@@ -21,7 +21,7 @@ export const Info = ({ name, role, account }: InfoProps) => {
           display: "flex",
           flexDirection: "column",
           paddingLeft: "20px",
-          paddingTop: "12px",
+          paddingTop: "20px",
           gap: "4px",
         }}
       >
@@ -52,6 +52,7 @@ export const Info = ({ name, role, account }: InfoProps) => {
               justifyContent: "space-between",
               alignItems: "center",
               backgroundColor: colors.black,
+              border: 0,
               borderRadius: "100px",
               padding: "10px 20px",
               marginTop: "8px",

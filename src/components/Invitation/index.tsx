@@ -21,6 +21,7 @@ export const Invitation = () => {
       <ShowBottomUPComponent>
         <div
           style={{
+            marginTop: 4,
             display: "flex",
             flexDirection: "column",
             gap: 12,
@@ -55,6 +56,7 @@ export const Invitation = () => {
       <ShowBottomUPComponent>
         <div
           style={{
+            marginTop: 4,
             display: "flex",
             flexDirection: "column",
             gap: 12,

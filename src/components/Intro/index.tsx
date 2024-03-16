@@ -11,15 +11,16 @@ export const Intro = () => {
         gap: 20,
       }}
     >
+      {/* 중앙정ㄹ렬 */}
       <ShowWeddingText
-        text={["Wedding", "Invitation"]}
+        text={["Wedding"]}
         variant="black"
         color="darkOrange"
         size={64}
         el="h1"
         moveY
       />
-      {/* 
+
       <ShowWeddingText
         text={["Invitation"]}
         variant="black"
@@ -27,7 +28,7 @@ export const Intro = () => {
         size={64}
         el="h1"
         moveY
-      /> */}
+      />
 
       <ShowWeddingText
         text="May 18th, 2024"
@@ -44,6 +45,7 @@ export const Intro = () => {
           style={{
             width: "calc(100vw - 40px)",
             maxWidth: "720px",
+            marginTop: 4,
           }}
         />
       </ShowBottomUPComponent>
@@ -55,6 +57,7 @@ export const Intro = () => {
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
+            marginTop: 4,
           }}
         >
           <P variant="medium" color="black" size={16}>
