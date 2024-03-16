@@ -56,7 +56,6 @@ export const ShowWeddingText = ({
   const textArray = Array.isArray(text) ? text : [text];
   const ref = useRef<HTMLSpanElement>(null);
   const isInView = useInView(ref, { amount: 0.5, once });
-  console.log(textArray);
 
   useEffect(() => {
     let timeout: NodeJS.Timeout;

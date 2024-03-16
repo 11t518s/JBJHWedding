@@ -3,17 +3,18 @@
 import { P, colors } from "@/design-system";
 import Toast, { ToastHandler } from "@/design-system/Toast";
 import Icons from "@/design-system/icons";
-import { useParams, useRouter } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import { useEffect, useRef } from "react";
 import CopyToClipboard from "react-copy-to-clipboard";
 
 export const Footer = () => {
   const urlShareRef = useRef<ToastHandler>(null);
-  const router = useParams();
+  const { get } = useSearchParams();
 
   const getTitle = () => {
-    if (router.name) {
-      return `💌${router.name}님! 정빈 & 정화 결혼식에 초대합니다!`;
+    const name = get("name");
+    if (name) {
+      return `💌${name}님! 정빈 & 정화 결혼식에 초대합니다!`;
     }
 
     return "💌정빈 & 정화 결혼식에 초대합니다!";
