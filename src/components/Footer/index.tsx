@@ -13,7 +13,7 @@ export const Footer = () => {
 
   const getTitle = () => {
     const name = searchParams.get("name");
-    const title = searchParams.get("fullText");
+    const title = searchParams.get("title");
     if (title) {
       return title;
     }
