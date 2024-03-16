@@ -64,6 +64,7 @@ export const Map = () => {
     <div
       style={{
         position: "relative",
+        marginTop: 4,
       }}
     >
       <div
