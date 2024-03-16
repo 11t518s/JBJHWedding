@@ -13,9 +13,9 @@ export const Footer = () => {
 
   const getTitle = () => {
     const name = searchParams.get("name");
-    const fullText = searchParams.get("fullText");
-    if (fullText) {
-      return fullText;
+    const title = searchParams.get("fullText");
+    if (title) {
+      return title;
     }
 
     if (name) {
