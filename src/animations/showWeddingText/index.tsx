@@ -56,6 +56,7 @@ export const ShowWeddingText = ({
   const textArray = Array.isArray(text) ? text : [text];
   const ref = useRef<HTMLSpanElement>(null);
   const isInView = useInView(ref, { amount: 0.5, once });
+  console.log(textArray);
 
   useEffect(() => {
     let timeout: NodeJS.Timeout;
@@ -120,6 +121,9 @@ export const ShowWeddingText = ({
                 style={{ display: "inline-block" }}
                 key={`${word}-${wordIndex}`}
               >
+                {wordIndex !== 0 && (
+                  <span style={{ display: "inline-block" }}>&nbsp;</span>
+                )}
                 {word.split("").map((char, charIndex) => (
                   <motion.span
                     key={`${char}-${charIndex}`}
@@ -132,7 +136,6 @@ export const ShowWeddingText = ({
                     {char}
                   </motion.span>
                 ))}
-                <span style={{ display: "inline-block" }}>&nbsp;</span>
               </span>
             ))}
           </span>

@@ -11,24 +11,25 @@ export const Intro = () => {
         gap: 20,
       }}
     >
-      {/* 중앙정ㄹ렬 */}
-      <ShowWeddingText
-        text={["Wedding"]}
-        variant="black"
-        color="darkOrange"
-        size={64}
-        el="h1"
-        moveY
-      />
+      <div>
+        <ShowWeddingText
+          text="Wedding"
+          variant="black"
+          color="darkOrange"
+          size={64}
+          el="h1"
+          moveY
+        />
 
-      <ShowWeddingText
-        text={["Invitation"]}
-        variant="black"
-        color="darkOrange"
-        size={64}
-        el="h1"
-        moveY
-      />
+        <ShowWeddingText
+          text="Invitation"
+          variant="black"
+          color="darkOrange"
+          size={64}
+          el="h1"
+          moveY
+        />
+      </div>
 
       <ShowWeddingText
         text="May 18th, 2024"

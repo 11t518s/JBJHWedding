@@ -9,9 +9,20 @@ import { motion } from "framer-motion";
 import { images, thumbnailImages } from "@/constants";
 import Image from "next/image";
 import { ShowBottomUPComponent } from "@/animations/ShowBottomUPComponent";
+import { useInnerSize } from "@/hooks/useInnerSize";
+
+const space = 40;
+const twoGap = 16;
 
 export const Gallery = () => {
+  const { innerWidth } = useInnerSize();
   const [imageIndex, setImageIndex] = useState<null | number>(null);
+
+  const imagwSize = (() => {
+    const widthin = Math.min(innerWidth, 720) - space - twoGap;
+
+    return widthin / 3;
+  })();
 
   return (
     <div className={globalStyles.contentContainer}>
@@ -50,9 +61,12 @@ export const Gallery = () => {
                   borderRadius: 8,
                 }}
               >
-                {/* TODO margin에 딱 맞게 좌우 여백 만들지 말기  */}
-                {/* 모달 올라왔을 때 스크롤 막기 */}
-                <Image width={100} height={100} src={item} alt="갤러리" />
+                <Image
+                  width={imagwSize}
+                  height={imagwSize}
+                  src={item}
+                  alt="갤러리"
+                />
               </motion.div>
             );
           })}
