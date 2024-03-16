@@ -121,7 +121,17 @@ export const Modal = ({ index, layoutId, onDissmiss }: ModalProps) => {
           <div onClick={handlePrev}>
             <Icons iconName="chevronLeft" />
           </div>
-          <P variant="medium" color="white" size={16}>
+          <P
+            variant="medium"
+            color="white"
+            size={16}
+            style={{
+              height: 24,
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
             {currentIndex + 1}/{images.length}
           </P>
 
