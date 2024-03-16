@@ -8,6 +8,7 @@ import { WeddingGift } from "@/components/WeddingGift";
 import { PreventPinchZoom } from "./PreventPinchZoom";
 import { colors } from "@/design-system";
 import { Footer } from "@/components/Footer";
+import { Suspense } from "react";
 
 export default function Home() {
   return (
@@ -84,7 +85,9 @@ export default function Home() {
       />
       <WeddingGift />
 
-      <Footer />
+      <Suspense>
+        <Footer />
+      </Suspense>
       <PreventPinchZoom />
     </div>
   );

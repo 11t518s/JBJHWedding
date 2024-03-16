@@ -9,10 +9,10 @@ import CopyToClipboard from "react-copy-to-clipboard";
 
 export const Footer = () => {
   const urlShareRef = useRef<ToastHandler>(null);
-  const { get } = useSearchParams();
+  const searchParams = useSearchParams();
 
   const getTitle = () => {
-    const name = get("name");
+    const name = searchParams.get("name");
     if (name) {
       return `💌${name}님! 정빈 & 정화 결혼식에 초대합니다!`;
     }
