@@ -13,8 +13,13 @@ export const Footer = () => {
 
   const getTitle = () => {
     const name = searchParams.get("name");
+    const fullText = searchParams.get("fullText");
+    if (fullText) {
+      return fullText;
+    }
+
     if (name) {
-      return `💌${name}님! 정빈 & 정화 결혼식에 초대합니다!`;
+      return `💌${name} 정빈 & 정화 결혼식에 초대합니다!`;
     }
     return "💌정빈 & 정화 결혼식에 초대합니다!";
   };
