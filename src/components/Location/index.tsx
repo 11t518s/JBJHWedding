@@ -22,7 +22,7 @@ export const Location = () => {
         <P
           variant="medium"
           color="dark"
-          size={16}
+          size={18}
           style={{
             textAlign: "center",
           }}
@@ -33,7 +33,7 @@ export const Location = () => {
         <P
           variant="regular"
           color="medium"
-          size={14}
+          size={16}
           style={{
             textAlign: "center",
           }}
