@@ -51,6 +51,11 @@ export const fontSize = {
     lineHeight: "34.5px",
   },
 
+  20: {
+    fontSize: "20px",
+    lineHeight: "32px",
+  },
+
   18: {
     fontSize: "18px",
     lineHeight: "28px",

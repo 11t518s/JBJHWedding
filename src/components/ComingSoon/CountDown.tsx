@@ -21,10 +21,17 @@ export const CountDown = () => {
         alignItems: "center",
         flexDirection: "column",
         margin: "20px 0",
+        gap: "2px",
       }}
     >
+      <div>
+        <P size={18} variant="regular" color="dark">
+          2024년 5월 18일 오후 5시
+        </P>
+      </div>
+
       <div className={styles.countDownIntroTextContainer}>
-        <P variant="regular" color="black" size={16}>
+        <P variant="regular" color="medium" size={16}>
           정빈 & 정화의 결혼식이{" "}
         </P>
 
@@ -32,7 +39,7 @@ export const CountDown = () => {
           {` ${days}일 `}
         </P>
 
-        <P variant="regular" color="black" size={16}>
+        <P variant="regular" color="medium" size={16}>
           {isOver ? "지났습니다." : "남았습니다."}
         </P>
       </div>

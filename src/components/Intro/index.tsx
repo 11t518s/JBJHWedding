@@ -32,10 +32,10 @@ export const Intro = () => {
       </div>
 
       <ShowWeddingText
-        text="2024년 5월 18일 오후 5시"
-        variant="medium"
-        color="black"
-        size={18}
+        text="2024. 5. 18. 17:00"
+        variant="bold"
+        color="darkOrange"
+        size={20}
         el="p"
         moveY
       />
