@@ -6,7 +6,7 @@ import { ShowBottomUPComponent } from "@/animations/ShowBottomUPComponent";
 
 export const Invitation = () => {
   return (
-    <div className={globalStyles.contentContainer}>
+    <div className={globalStyles.contentContainer} style={{ gap: 24 }}>
       <div className={styles.text}>
         <ShowWeddingText
           text="Groom & Bride"
@@ -18,37 +18,13 @@ export const Invitation = () => {
       </div>
 
       <ShowBottomUPComponent>
-        <div
+        <img
+          src="/GroomAndBride.png"
           style={{
-            paddingTop: 4,
-            display: "flex",
-            flexDirection: "column",
+            width: "calc(100vw - 40px)",
+            maxWidth: "680px",
           }}
-        >
-          {/* <img
-            src="/Groom.png"
-            style={{
-              width: "calc(100vw - 40px)",
-              maxWidth: "680px",
-            }}
-          /> */}
-
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              gap: "8px",
-            }}
-          >
-            <P variant="regular" color="dark" size={16}>
-              (故)이순남·김은숙의 차남
-            </P>
-            <P variant="black" color="black" size={24}>
-              정빈
-            </P>
-          </div>
-        </div>
+        />
       </ShowBottomUPComponent>
 
       <ShowBottomUPComponent>
@@ -56,27 +32,42 @@ export const Invitation = () => {
           style={{
             display: "flex",
             flexDirection: "column",
+            alignItems: "center",
+            gap: 12,
           }}
         >
-          {/* <img
-            src="/Bride.png"
-            style={{
-              width: "calc(100vw - 40px)",
-              maxWidth: "680px",
-            }}
-          /> */}
           <div
             style={{
               display: "flex",
-              justifyContent: "center",
+              justifyContent: "space-between",
               alignItems: "center",
-              gap: "8px",
+              width: "60vw",
+              minWidth: 230,
+              maxWidth: 300,
+            }}
+          >
+            <P variant="regular" color="dark" size={16}>
+              (故)이순남·김은숙의 차남
+            </P>
+            <P variant="medium" color="black" size={24}>
+              정빈
+            </P>
+          </div>
+
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              width: "60vw",
+              minWidth: 230,
+              maxWidth: 300,
             }}
           >
             <P variant="regular" color="dark" size={16}>
               김명철·김금례의 장녀
             </P>
-            <P variant="black" color="black" size={24}>
+            <P variant="medium" color="black" size={24}>
               정화
             </P>
           </div>
