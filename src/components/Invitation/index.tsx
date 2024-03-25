@@ -2,7 +2,6 @@ import { ShowWeddingText } from "@/animations";
 import { P } from "@/design-system";
 import styles from "./invitation.module.css";
 import globalStyles from "@/styles/global.module.css";
-import { brideAndGroom } from "./constants";
 import { ShowBottomUPComponent } from "@/animations/ShowBottomUPComponent";
 
 export const Invitation = () => {
@@ -21,19 +20,18 @@ export const Invitation = () => {
       <ShowBottomUPComponent>
         <div
           style={{
-            marginTop: 4,
+            paddingTop: 4,
             display: "flex",
             flexDirection: "column",
-            gap: 12,
           }}
         >
-          <img
+          {/* <img
             src="/Groom.png"
             style={{
               width: "calc(100vw - 40px)",
               maxWidth: "680px",
             }}
-          />
+          /> */}
 
           <div
             style={{
@@ -43,7 +41,7 @@ export const Invitation = () => {
               gap: "8px",
             }}
           >
-            <P variant="regular" color="black" size={16}>
+            <P variant="regular" color="dark" size={16}>
               (故)이순남·김은숙의 차남
             </P>
             <P variant="black" color="black" size={24}>
@@ -56,19 +54,17 @@ export const Invitation = () => {
       <ShowBottomUPComponent>
         <div
           style={{
-            marginTop: 4,
             display: "flex",
             flexDirection: "column",
-            gap: 12,
           }}
         >
-          <img
+          {/* <img
             src="/Bride.png"
             style={{
               width: "calc(100vw - 40px)",
               maxWidth: "680px",
             }}
-          />
+          /> */}
           <div
             style={{
               display: "flex",
@@ -77,7 +73,7 @@ export const Invitation = () => {
               gap: "8px",
             }}
           >
-            <P variant="regular" color="black" size={16}>
+            <P variant="regular" color="dark" size={16}>
               김명철·김금례의 장녀
             </P>
             <P variant="black" color="black" size={24}>
