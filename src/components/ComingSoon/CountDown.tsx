@@ -24,11 +24,13 @@ export const CountDown = () => {
         gap: "2px",
       }}
     >
-      <div>
-        <P size={18} variant="regular" color="dark">
-          2024년 5월 18일 오후 5시
-        </P>
-      </div>
+      {isOver ? null : (
+        <div>
+          <P size={18} variant="regular" color="dark">
+            2024년 5월 18일 오후 5시
+          </P>
+        </div>
+      )}
 
       <div className={styles.countDownIntroTextContainer}>
         <P variant="regular" color="medium" size={16}>
@@ -36,7 +38,7 @@ export const CountDown = () => {
         </P>
 
         <P variant="regular" color="darkOrange" size={16}>
-          {` ${days}일 `}
+          {` ${isOver ? days - 1 : days}일 `}
         </P>
 
         <P variant="regular" color="medium" size={16}>
@@ -47,7 +49,7 @@ export const CountDown = () => {
       <div className={styles.countDownContainer}>
         <div className={styles.countDown}>
           <P variant="black" color="black" size={48}>
-            {String(days).padStart(2, "0")}
+            {String(isOver ? days - 1 : days).padStart(2, "0")}
           </P>
           <P variant="regular" color="medium" size={14}>
             Days
@@ -61,7 +63,7 @@ export const CountDown = () => {
 
         <div className={styles.countDown}>
           <P variant="black" color="black" size={48}>
-            {String(hours).padStart(2, "0")}
+            {String(isOver ? hours - 1 : hours).padStart(2, "0")}
           </P>
           <P variant="regular" color="medium" size={14}>
             Hours
@@ -76,7 +78,7 @@ export const CountDown = () => {
 
         <div className={styles.countDown}>
           <P variant="black" color="black" size={48}>
-            {String(minutes).padStart(2, "0")}
+            {String(isOver ? minutes - 1 : minutes).padStart(2, "0")}
           </P>
           <P variant="regular" color="medium" size={14}>
             Minutes
