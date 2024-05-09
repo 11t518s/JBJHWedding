@@ -47,6 +47,32 @@ export default function Home() {
 
       <Gallery />
 
+      <hr
+        style={{
+          height: 2,
+          width: "100vw",
+          maxWidth: "720px",
+          backgroundColor: colors.black,
+          margin: 0,
+          padding: 0,
+
+          border: 0,
+        }}
+      />
+      <Location />
+
+      <hr
+        style={{
+          height: 2,
+          width: "100vw",
+          maxWidth: "720px",
+          backgroundColor: colors.black,
+          margin: 0,
+          padding: 0,
+
+          border: 0,
+        }}
+      />
       <WeddingGift />
 
       <Suspense>
